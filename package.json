@@ -1,0 +1,35 @@
+{
+  "name": "pino-yc-transport",
+  "version": "0.0.0",
+  "description": "A [Pino v7+ transport](https://getpino.io/#/docs/transports?id=v7-transports) to send message to [Yandex Cloud Logging](https://yandex.cloud/ru/services/logging) from serveless functions or containers.",
+  "keywords": [
+    "pino",
+    "yc",
+    "yandex",
+    "yandex cloud",
+    "logging",
+    "log"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=7.24.2"
+  },
+  "dependencies": {
+    "pino-abstract-transport": "^1.2.0"
+  },
+  "repository": "https://github.com/Jhon-Mosk/pino-yc-transport",
+  "bugs": {
+    "url": "https://github.com/Jhon-Mosk/pino-yc-transport/issues"
+  },
+  "homepage": "https://github.com/Jhon-Mosk/pino-yc-transport",
+  "author": {
+    "name": "Evgeniy Politiko",
+    "email": "Jhon-mosk@yandex.ru",
+    "url": "https://jhon-mosk.ru/"
+  },
+  "license": "MIT"
+}
