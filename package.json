@@ -21,7 +21,10 @@
   "dependencies": {
     "pino-abstract-transport": "^1.2.0"
   },
-  "repository": "https://github.com/Jhon-Mosk/pino-yc-transport",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jhon-Mosk/pino-yc-transport.git"
+  },
   "bugs": {
     "url": "https://github.com/Jhon-Mosk/pino-yc-transport/issues"
   },
