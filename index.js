@@ -1,6 +1,6 @@
-const { Transform } = require("node:stream");
-const build = require("pino-abstract-transport");
-const { DEFAULT_LEVELS } = require("pino/lib/constants");
+const { Transform } = require('node:stream');
+const build = require('pino-abstract-transport');
+const { DEFAULT_LEVELS } = require('pino/lib/constants');
 
 const nums = Object.keys(DEFAULT_LEVELS).reduce((o, k) => {
   o[DEFAULT_LEVELS[k]] = k;
@@ -8,12 +8,12 @@ const nums = Object.keys(DEFAULT_LEVELS).reduce((o, k) => {
 }, {});
 
 const getMessage = (obj) => {
-  const systemKeys = ["level", "time", "pid", "hostname"];
+  const systemKeys = ['level', 'time', 'pid', 'hostname'];
   const { msg, err } = obj;
   if (err) return err;
   if (msg) return msg;
   const keys = Object.keys(obj).filter((key) => !systemKeys.includes(key));
-  if (!keys.length) return "";
+  if (!keys.length) return '';
   const userObj = keys.reduce((o, key) => {
     return (o[key] = obj[key]), o;
   }, {});
@@ -34,9 +34,10 @@ module.exports = function () {
   return build(async function (source) {
     for await (const obj of source) {
       const result = {};
-      result.level = nums[obj.level].toUpperCase();
+      const level = nums[obj.level] || 'UNSPECIFIED';
+      result.level = level.toUpperCase();
       result.message = getMessage(obj);
-      process.stdout.write(JSON.stringify(result) + "\n");
+      process.stdout.write(JSON.stringify(result) + '\n');
     }
   });
 };
