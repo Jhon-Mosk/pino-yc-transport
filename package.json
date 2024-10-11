@@ -1,6 +1,6 @@
 {
   "name": "pino-yc-transport",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A [Pino v7+ transport](https://getpino.io/#/docs/transports?id=v7-transports) to send message to [Yandex Cloud Logging](https://yandex.cloud/ru/services/logging) from serveless functions or containers.",
   "keywords": [
     "pino",
