@@ -9,9 +9,9 @@ const nums = Object.keys(DEFAULT_LEVELS).reduce((o, k) => {
 
 const getMessage = (obj) => {
   const systemKeys = ['level', 'time', 'pid', 'hostname'];
-  const { msg, err } = obj;
+  const { reqId, msg, err } = obj;
   if (err) return err;
-  if (msg) return msg;
+  if (msg && !reqId) return msg;
   const keys = Object.keys(obj).filter((key) => !systemKeys.includes(key));
   if (!keys.length) return '';
   const userObj = keys.reduce((o, key) => {
